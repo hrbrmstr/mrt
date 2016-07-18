@@ -23,11 +23,10 @@ using namespace Rcpp;
 
 Rcpp::Function msg("message");
 
-template <typename T>
-std::string int_to_string(T val) {
- std::ostringstream oss;
- oss << val;
- return(oss.str());
+std::string int_to_string(int val){
+  std::ostringstream oss;
+  oss << val;
+  return oss.str();
 }
 
 //' Convert RouteViews RIB (bgpdump table dump v2) to subnet/asn map
