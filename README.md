@@ -1,6 +1,23 @@
 
 `bgpdump` : Tools to Retrieve and Process 'BGP' Files
 
+### Requirements
+
+This package links to [`libBGPdump`](https://bitbucket.org/ripencc/bgpdump/wiki/Home).
+
+On macOS, you can:
+
+    brew install bgpdump
+
+On Ubuntu/Debian (or prbly any other one) you can:
+
+    sudo apt-get install -y mercurial libbz2-dev zlib1g-dev
+    hg clone https://bitbucket.org/ripencc/bgpdump
+    cd bgpdump
+    ./bootstrap.sh
+    make
+    sudo make install
+
 The following functions are implemented:
 
 -   `get_latest_rib`: Retrieve the latest RouteViews RIB file
@@ -33,7 +50,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Mon Jul 18 15:30:07 2016"
+    ## [1] "Mon Jul 18 15:55:06 2016"
 
 ``` r
 test_dir("tests/")

@@ -9,6 +9,8 @@ Description: A compendium of utilities to retrieve and process BGP files. Presen
     download and converting MRT v2 files from RouteViews.
 URL: http://github.com/hrbrmstr/bgpdump
 BugReports: https://github.com/hrbrmstr/bgpdump/issues
+NeedsCompilation: yes
+SystemRequirements: libbgpdump
 License: AGPL
 Suggests:
     testthat
