@@ -1,2 +1,3 @@
-PKG_CPPFLAGS = -std=c++11 -Wall -mtune=core2 -g -O2 -DNDEBUG -g
+CXX_STD = CXX11
+PKG_CPPFLAGS = -Wall -mtune=core2 -g -O2 -DNDEBUG -g
 PKG_LIBS = -lbgpdump
