@@ -10,7 +10,7 @@ Description: A compendium of utilities to retrieve and process BGP files. Presen
 URL: http://github.com/hrbrmstr/mrt
 BugReports: https://github.com/hrbrmstr/mrt/issues
 NeedsCompilation: yes
-SystemRequirements: C++11
+SystemRequirements: libbgpdump
 License: AGPL
 Suggests:
     testthat

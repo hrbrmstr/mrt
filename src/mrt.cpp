@@ -1,5 +1,3 @@
-// [[Rcpp::plugins(cpp11)]]
-
 #include <Rcpp.h>
 #include <time.h>
 
@@ -9,7 +7,6 @@
 #include <arpa/inet.h>
 
 #include <string>
-
 #include <unordered_map>
 
 extern "C" {
@@ -95,11 +92,10 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
   keys.reserve(asn_table.size());
   values.reserve(asn_table.size());
 
-  // yes, this makes it C++11 dependent, but it's soooo much nicer syntax
-
-  for (auto kv : asn_table) {
-    keys.push_back(kv.first);
-    values.push_back(kv.second);
+  for(std::unordered_map<std::string, std::string>::iterator iter = asn_table.begin();
+      iter != asn_table.end(); ++iter) {
+    keys.push_back(iter->first);
+    values.push_back(iter->second);
   };
 
   DataFrame df = DataFrame::create(_["cidr"] = keys,
