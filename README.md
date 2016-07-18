@@ -18,7 +18,7 @@ On Ubuntu/Debian (or prbly any other one) you can do the following to install th
     make
     sudo make install
 
-Unfortunately, even after downgrading the package from using C++11 extensions, I can't get it to run on Ubuntu.
+(you may need to use `ldconfig` after that depending on your system)
 
 The following functions are implemented:
 
@@ -52,7 +52,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Mon Jul 18 17:40:52 2016"
+    ## [1] "Mon Jul 18 17:47:04 2016"
 
 ``` r
 test_dir("tests/")
