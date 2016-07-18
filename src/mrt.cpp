@@ -7,7 +7,12 @@
 #include <arpa/inet.h>
 
 #include <string>
+
+#ifdef linux
+#include <tr1/unordered_map>
+#else
 #include <unordered_map>
+#endif
 
 extern "C" {
 #include <bgpdump_lib.h>
