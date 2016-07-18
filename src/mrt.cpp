@@ -7,6 +7,7 @@
 #include <arpa/inet.h>
 
 #include <string>
+#include <sstream>
 
 #ifdef linux
 #include <tr1/unordered_map>
@@ -22,6 +23,13 @@ using namespace Rcpp;
 
 Rcpp::Function msg("message");
 Rcpp::Function warn("warning");
+
+template <typename T>
+std::string int_to_string(T val) {
+ std::ostringstream oss;
+ oss << val;
+ return(oss.str());
+}
 
 //' Convert RouteViews RIB (bgpdump table dump v2) to subnet/asn map
 //'
@@ -55,7 +63,7 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
 
   do {
 
-    if (progress & ((i % 50000) == 0)) msg(std::to_string(i) + " records processed");
+    if (progress & ((i % 50000) == 0)) msg(int_to_string(i) + " records processed");
 
     if ((i++ % 10000) == 0) { Rcpp::checkUserInterrupt(); };
 
@@ -72,7 +80,7 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
           for (unsigned int j=0; j<e->entry_count; j++) {
             attributes_t *attr = e->entries[j].attr;
             if ((attr->flag & ATTR_FLAG_BIT(BGP_ATTR_AS_PATH)) != 0) {
-              mask = std::to_string(e->prefix_length);
+              mask = int_to_string(e->prefix_length);
               asn = std::string(attr->aspath->str);
               asn = asn.substr(asn.rfind(" ") + 1);
               asn_table[prefix + "/" + mask] = asn;
