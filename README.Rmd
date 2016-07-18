@@ -2,18 +2,18 @@
 output: rmarkdown::github_document
 ---
 
-`bgpdump` : Tools to Retrieve and Process 'BGP' Files
+`mrt` : Tools to Retrieve and Process 'BGP' Files
 
 ### Requirements
 
 This package links to [`libBGPdump`](https://bitbucket.org/ripencc/bgpdump/wiki/Home).
 
-On macOS, you can:
+On macOS, you can do the following to install the libary:
 
     brew install bgpdump
     
 
-On Ubuntu/Debian (or prbly any other one) you can:
+On Ubuntu/Debian (or prbly any other one) you can do the following to install the library:
 
     sudo apt-get install -y mercurial libbz2-dev zlib1g-dev
     hg clone https://bitbucket.org/ripencc/bgpdump
@@ -32,7 +32,7 @@ The following functions are implemented:
 ### Installation
 
 ```{r eval=FALSE}
-devtools::install_github("hrbrmstr/bgpdump")
+devtools::install_github("hrbrmstr/mrt")
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
@@ -42,17 +42,17 @@ options(width=120)
 ### Usage
 
 ```{r}
-library(bgpdump)
+library(mrt)
 
 # current verison
-packageVersion("bgpdump")
+packageVersion("mrt")
 
 ```
 
 ### Test Results
 
 ```{r}
-library(bgpdump)
+library(mrt)
 library(testthat)
 
 date()

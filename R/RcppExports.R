@@ -10,6 +10,6 @@
 #' @return \code{tbl_df} (tibble) or \code{NULL}
 #' @export
 rib_to_asn_table <- function(path, progress = FALSE) {
-    .Call('bgpdump_rib_to_asn_table', PACKAGE = 'bgpdump', path, progress)
+    .Call('mrt_rib_to_asn_table', PACKAGE = 'mrt', path, progress)
 }
 

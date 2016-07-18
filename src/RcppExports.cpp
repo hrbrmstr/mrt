@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // rib_to_asn_table
 DataFrame rib_to_asn_table(std::string path, bool progress);
-RcppExport SEXP bgpdump_rib_to_asn_table(SEXP pathSEXP, SEXP progressSEXP) {
+RcppExport SEXP mrt_rib_to_asn_table(SEXP pathSEXP, SEXP progressSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
