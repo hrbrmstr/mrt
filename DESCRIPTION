@@ -17,7 +17,6 @@ Suggests:
 Depends:
     R (>= 3.0.0)
 Imports:
-    purrr,
     Rcpp,
     tibble,
     curl
