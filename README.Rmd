@@ -22,6 +22,8 @@ On Ubuntu/Debian (or prbly any other one) you can do the following to install th
     make
     sudo make install
     
+Unfortunately, even after downgrading the package from using C++11 extensions, I can't get it to run on Ubuntu.
+
 
 The following functions are implemented:
 
