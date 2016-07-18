@@ -46,7 +46,11 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
 
   unsigned int i=0;
 
+#ifdef linux
+  std::tr1::unordered_map <std::string, std::string> asn_table;
+#else
   std::unordered_map <std::string, std::string> asn_table;
+#endif
   std::string prefix, mask, asn;
 
   do {
@@ -97,8 +101,13 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
   keys.reserve(asn_table.size());
   values.reserve(asn_table.size());
 
-  for(std::unordered_map<std::string, std::string>::iterator iter = asn_table.begin();
-      iter != asn_table.end(); ++iter) {
+#ifdef linux
+  std::tr1::unordered_map<std::string, std::string>::iterator iter = asn_table.begin();
+#else
+  std::unordered_map<std::string, std::string>::iterator iter = asn_table.begin();
+#endif
+
+  for(; iter != asn_table.end(); ++iter) {
     keys.push_back(iter->first);
     values.push_back(iter->second);
   };
