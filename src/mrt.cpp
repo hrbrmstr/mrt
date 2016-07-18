@@ -40,7 +40,7 @@ std::string int_to_string(T val) {
 //' @return \code{tbl_df} (tibble) or \code{NULL}
 //' @export
 // [[Rcpp::export]]
-DataFrame rib_to_asn_table(std::string path, bool progress=false) {
+Rcpp::DataFrame rib_to_asn_table(std::string path, bool progress=false) {
 
   std::string full_path(R_ExpandFileName(path.c_str()));
 
@@ -120,7 +120,7 @@ DataFrame rib_to_asn_table(std::string path, bool progress=false) {
     values.push_back(iter->second);
   };
 
-  DataFrame df = DataFrame::create(_["cidr"] = keys,
+  Rcpp::DataFrame df = Rcpp::DataFrame::create(_["cidr"] = keys,
                            _["asn"] = values,
                            _["stringsAsFactors"] = false);
 
