@@ -1,0 +1,2 @@
+PKG_CPPFLAGS = -Wall -mtune=core2 -g -O2 -DNDEBUG -g -Wno-c++11-extensions
+PKG_LIBS = -lbgpdump

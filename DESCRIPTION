@@ -1,0 +1,23 @@
+Package: bgpdump
+Type: Package
+Title: Tools to Retrieve and Process 'BGP' Files
+Version: 0.1.0
+Date: 2016-07-18
+Author: Bob Rudis (@hrbrmstr)
+Maintainer: Bob Rudis <bob@rudis.net>
+Description: A compendium of utilities to retrieve and process BGP files. Presently supports
+    download and converting MRT v2 files from RouteViews.
+URL: http://github.com/hrbrmstr/bgpdump
+BugReports: https://github.com/hrbrmstr/bgpdump/issues
+License: AGPL
+Suggests:
+    testthat
+Depends:
+    R (>= 3.0.0)
+Imports:
+    purrr,
+    Rcpp,
+    tibble,
+    curl
+LinkingTo: Rcpp
+RoxygenNote: 5.0.1

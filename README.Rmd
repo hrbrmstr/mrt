@@ -1,0 +1,43 @@
+---
+output: rmarkdown::github_document
+---
+
+`bgpdump` : Tools to Retrieve and Process 'BGP' Files
+
+The following functions are implemented:
+
+- `get_latest_rib`:	Retrieve the latest RouteViews RIB file
+- `get_rib`:	Retrieve a specific, historical RouteViews RIB file
+- `rib_to_asn_table`:	Convert RouteViews RIB (bgpdump table dump v2) to subnet/asn map
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/bgpdump")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r}
+library(bgpdump)
+
+# current verison
+packageVersion("bgpdump")
+
+```
+
+### Test Results
+
+```{r}
+library(bgpdump)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
