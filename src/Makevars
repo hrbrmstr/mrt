@@ -1,3 +1,4 @@
 CXX_STD = CXX11
+LDFLAGS = -L/usr/local/lib
 PKG_CPPFLAGS = -Wall -mtune=core2 -g -O2 -DNDEBUG -g
 PKG_LIBS = -lbgpdump
