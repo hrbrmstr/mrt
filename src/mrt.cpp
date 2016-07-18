@@ -22,7 +22,6 @@ extern "C" {
 using namespace Rcpp;
 
 Rcpp::Function msg("message");
-Rcpp::Function warn("warning");
 
 template <typename T>
 std::string int_to_string(T val) {
