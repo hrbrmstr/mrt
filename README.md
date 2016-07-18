@@ -1,15 +1,15 @@
 
-`bgpdump` : Tools to Retrieve and Process 'BGP' Files
+`mrt` : Tools to Retrieve and Process 'BGP' Files
 
 ### Requirements
 
 This package links to [`libBGPdump`](https://bitbucket.org/ripencc/bgpdump/wiki/Home).
 
-On macOS, you can:
+On macOS, you can do the following to install the libary:
 
     brew install bgpdump
 
-On Ubuntu/Debian (or prbly any other one) you can:
+On Ubuntu/Debian (or prbly any other one) you can do the following to install the library:
 
     sudo apt-get install -y mercurial libbz2-dev zlib1g-dev
     hg clone https://bitbucket.org/ripencc/bgpdump
@@ -27,16 +27,16 @@ The following functions are implemented:
 ### Installation
 
 ``` r
-devtools::install_github("hrbrmstr/bgpdump")
+devtools::install_github("hrbrmstr/mrt")
 ```
 
 ### Usage
 
 ``` r
-library(bgpdump)
+library(mrt)
 
 # current verison
-packageVersion("bgpdump")
+packageVersion("mrt")
 ```
 
     ## [1] '0.1.0'
@@ -44,17 +44,26 @@ packageVersion("bgpdump")
 ### Test Results
 
 ``` r
-library(bgpdump)
+library(mrt)
 library(testthat)
 
 date()
 ```
 
-    ## [1] "Mon Jul 18 15:55:06 2016"
+    ## [1] "Mon Jul 18 16:21:44 2016"
 
 ``` r
 test_dir("tests/")
 ```
+
+    ## Loading required package: bgpdump
+
+    ## 
+    ## Attaching package: 'bgpdump'
+
+    ## The following objects are masked from 'package:mrt':
+    ## 
+    ##     get_latest_rib, rib_to_asn_table
 
     ## testthat results ========================================================================================================
     ## OK: 0 SKIPPED: 0 FAILED: 0
