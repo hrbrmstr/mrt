@@ -17,4 +17,3 @@ rib_to_asn_table(path, progress = FALSE)
 \description{
 It presently ONLY works with the modern RouteViews v2 format.
 }
-

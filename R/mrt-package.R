@@ -8,6 +8,8 @@
 #' @author Bob Rudis (@@hrbrmstr)
 #' @useDynLib mrt
 #' @import tibble
+#' @importFrom httr content GET
+#' @importFrom rvest html_node html_attr
 #' @importFrom curl curl_download
 #' @importFrom Rcpp sourceCpp
 NULL

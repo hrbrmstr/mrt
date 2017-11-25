@@ -4,7 +4,7 @@
 \alias{get_latest_rib}
 \title{Retrieve the latest RouteViews RIB file}
 \usage{
-get_latest_rib(output_dir = ".", .progress = FALSE)
+get_latest_rib(output_dir = ".", .progress = interactive())
 }
 \arguments{
 \item{output_dir}{where the downloaded RIB should be stored}
@@ -20,4 +20,3 @@ Retrieve the latest RouteViews RIB file
 \note{
 this function handles the UTC time zone adjustment properly
 }
-

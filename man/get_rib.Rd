@@ -4,7 +4,7 @@
 \alias{get_rib}
 \title{Retrieve a specific, historical RouteViews RIB file}
 \usage{
-get_rib(date, hour, output_dir = ".", .progress = FALSE)
+get_rib(date, hour, output_dir = ".", .progress = interactive())
 }
 \arguments{
 \item{date}{the date (`YYYY-mm-dd` string or \code{Date}) of the file (remembering
@@ -20,4 +20,3 @@ the filename (invisibly)
 \description{
 Retrieve a specific, historical RouteViews RIB file
 }
-
